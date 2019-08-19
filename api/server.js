@@ -1,12 +1,14 @@
 const express = require('express');
 const helmet = require('helmet');
 const bcrypt = require('bcrypt');
+const cors = require('cors');
 const userDB = require('./user/user-model');
 const restricted = require('../auth/restricted-middleware');
 
 const server = express();
 
 server.use(helmet());
+server.use(cors());
 server.use(express.json());
 
 
