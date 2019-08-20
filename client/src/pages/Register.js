@@ -8,7 +8,7 @@ const Register = (props) => {
   const baseUrl = 'http://localhost:5000';
   
   const register = (user) => {
-    axios.post(`${baseUrl}/api/register`, user)
+    axios.post(`${baseUrl}/api/auth/register`, user)
       .then(response => {
         console.log(response);
         props.history.push('/login')

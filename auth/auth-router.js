@@ -36,6 +36,19 @@ router.post('/login', validateUserInput, async (req, res) => {
   }
 })
 
+//logging out
+router.get('/logout', (req, res) => {
+  if (req.session) {
+    req.session.destroy(error => {
+      if (error) {
+        res.status(500).json({ message: 'Error logging out' });
+      } else {
+        res.status(200).json({ message: 'See ya later boy see ya later' });
+      }
+    })
+  }
+})
+
 //middleware
 function validateUserInput(req, res, next) {
   const body = req.body;

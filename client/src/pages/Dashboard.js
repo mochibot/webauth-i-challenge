@@ -8,9 +8,8 @@ const Dashboard = () => {
   
   const baseUrl = 'http://localhost:5000';
   useEffect(() => {
-    axios.get(`${baseUrl}/api/users`)
+    axios.get(`${baseUrl}/api/restricted/users`)
       .then(response => {
-        console.log(response);
         setUsers(response.data);
       })
       .catch(error => {
